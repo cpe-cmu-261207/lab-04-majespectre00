@@ -7,13 +7,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src='script.js' defer></script>
 	<title>Lab 04</title>
-	<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-	<h1>Minimal Todo List</h1>
-	<input  type='text'>
-	<button>+</button>
+<body style="background-color: azure;">
+	<div class = "mt-5 max-w-screen-md mx-auto">
+		<h1 class="text-center py-2 text-4xl" >Minimal Todo List</h1>
+		<div class="flex ">
+			<input id="inputbox" class="shadow border rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type='text' placeholder="Add Task Here...." oninput="updateinput(event)">
+			<button class="bg-white hover:bg-gray-300 font-semibold py-2 px-4 shadow border  rounded" onclick="addbtnclick()">+</button>
+			<button class="bg-white hover:bg-gray-300 font-semibold py-2 px-4 shadow border  rounded ml-3" onclick="clearbtnclick()">Clear</button>
+		</div>	
+		<div>
+			<div id="tlist"></div>
+		</div>
+	</div>
+	
 </body>
 
 </html>
