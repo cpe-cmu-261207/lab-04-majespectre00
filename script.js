@@ -102,6 +102,7 @@ const addbtnclick = () => {
     let inputtask = tinput
     taskarr.push(tinput)
     document.getElementById('inputbox').value = ''
+    tinput = ''
     show()
     }
 }
