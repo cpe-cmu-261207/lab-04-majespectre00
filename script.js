@@ -16,12 +16,15 @@ taskarr = JSON.parse(localStorage.getItem('usertask'))
 donearr = JSON.parse(localStorage.getItem('donetask'))
 show()
 function show() {
+    //localstorge thing
     if(taskarr == null){
         taskarr = []
     }
     if(donearr == null){
         donearr = []
     }
+
+
     localStorage.setItem('usertask',JSON.stringify(taskarr))
     tlist.innerHTML = ''
     for (let i = 0; i < taskarr.length; i++) {
