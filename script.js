@@ -36,11 +36,12 @@ function show() {
         task.addEventListener('mouseleave',()=>{
             taskbtn.style.visibility = 'hidden'
         })
-        task.classList = "border-b-2 py-2 justify-between full-w flex"
-        const tasktext = document.createElement('div')
+        task.classList = "border-b-2 py-2 justify-between flex"
         //text
+        const tasktext = document.createElement('div')
+        tasktext.classList="pl-5"
         const text = document.createElement('p')
-        text.classList = "mt-1"
+        text.classList = "mt-1 font-sans text-green-600"
         text.innerHTML = taskarr[i]
         tasktext.append(text)
 
@@ -49,14 +50,14 @@ function show() {
         //donebtn
         const donebtn = document.createElement('button')
         donebtn.innerHTML = "Done"
-        donebtn.classList ="bg-white hover:bg-gray-300 font-semibold py-1 px-2 shadow border  rounded mr-2"
+        donebtn.classList ="bg-white hover:bg-gray-100 font-semibold py-1 px-2 shadow border  rounded mr-2 text-green-700"
         donebtn.addEventListener('click',()=>{
             bdone(i)
         })
         //delbtn
         const delbtn = document.createElement('button')
         delbtn.innerHTML = "Delete"
-        delbtn.classList ="bg-white hover:bg-gray-300 font-semibold py-1 px-2 shadow border  rounded "
+        delbtn.classList ="bg-white hover:bg-gray-100 font-semibold py-1 px-2 shadow border rounded text-green-700"
         delbtn.addEventListener('click',()=>{
             bdel(i)
         })
@@ -70,11 +71,12 @@ function show() {
     for(let i = donearr.length-1;i>=0;i--){
         localStorage.setItem('donetask',JSON.stringify(donearr))
         const task = document.createElement('div')
-        task.classList = "border-b-2 py-2 justify-between full-w flex"
+        task.classList = "border-b-2 py-2 justify-between flex"
         const tasktext = document.createElement('div')
+        tasktext.classList="pl-5"
         //text
         const text = document.createElement('p')
-        text.classList = "mt-1 line-through"
+        text.classList = "mt-1 line-through text-gray-400"
         text.innerHTML = donearr[i]
         tasktext.append(text)
         //append session
@@ -110,31 +112,7 @@ const clearbtnclick = ()=>{
     localStorage.setItem('usertask',JSON.stringify(taskarr))
     localStorage.setItem('donetask',JSON.stringify(donearr))
     document.getElementById('inputbox').value = ''
+    location.reload()
     show()
     alert("All Tasks have been deleted")
 }
-
-
-/*
-const addbtnclick = () =>
-    console.log("clicked")
-    console.log(tinput)
-    const task = document.createElement('div')
-    task.classList.add("justify-between")
-    task.classList.add("full-w")
-    task.classList.add("flex")
-    const tasktext = document.createElement('div')
-    const text = document.createElement('p')
-    text.innerHTML = tinput
-    tasktext.append(text)
-    const taskbtn = document.createElement('div')
-    const donebtn = document.createElement('button')
-    donebtn.innerHTML = "Done"
-    const delbtn = document.createElement('button')
-    delbtn.innerHTML = "Delete"
-    taskbtn.append(donebtn)
-    taskbtn.append(delbtn)
-    task.append(tasktext)
-    task.append(taskbtn)
-    tlist.append(task)
-*/

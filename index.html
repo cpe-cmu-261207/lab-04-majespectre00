@@ -8,21 +8,39 @@
 	<script src='script.js' defer></script>
 	<title>Minimaltodolistmajespectre00</title>
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<style>
+		body, html {
+		  height: 100%;
+		  margin: 0;
+		}
+		
+		.bg {
+		  /* The image used */
+		  background-image: url("img/bg.jpg");
+		
+		  /* Full height */
+		  height: 100%; 
+		
+		  /* Center and scale the image nicely */
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		}
+		</style>
 </head>
 
-<body style="background-color: azure;">
-	<div class = "mt-5 max-w-screen-md mx-auto">
-		<h1 class="text-center py-2 text-4xl" >Minimal Todo List</h1>
-		<div class="flex ">
-			<input id="inputbox" class="shadow border rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type='text' placeholder="Add Task Here...." oninput="updateinput(event)">
-			<button class="bg-white hover:bg-gray-300 font-semibold py-2 px-4 shadow border  rounded" onclick="addbtnclick()">+</button>
-			<button class="bg-white hover:bg-gray-300 font-semibold py-2 px-4 shadow border  rounded ml-3" onclick="clearbtnclick()">Clear</button>
+<body class="bg">
+	<div class = "mt-20 max-w-screen-md mx-auto bg-white rounded px-5 py-3 shadow-xl border-4 border-gray-100">
+		<h1 class="text-center py-2 text-4xl font-semibold font-serif text-green-800">Minimal Todo List</h1>
+		<div class="flex py-2 rounded">
+			<input id="inputbox" class="shadow border rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline shadow-md" type='text' placeholder="Add Task Here...." oninput="updateinput(event)">
+			<button class="bg-white hover:bg-gray-100 font-semibold py-2 px-4 shadow border  rounded shadow-md text-green-800" onclick="addbtnclick()">+</button>
+			<button class="bg-white hover:bg-gray-100 font-semibold py-2 px-4 shadow border  rounded ml-3 shadow-md text-green-800"  onclick="clearbtnclick()">Clear</button>
 		</div>	
-		<div>
+		<div id="taskcontainer">
 			<div id="tlist"></div>
 		</div>
 	</div>
-	
 </body>
 
 </html>
