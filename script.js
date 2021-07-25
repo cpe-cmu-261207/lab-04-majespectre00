@@ -27,7 +27,7 @@ function show() {
 
     localStorage.setItem('usertask',JSON.stringify(taskarr))
     tlist.innerHTML = ''
-    for (let i = 0; i < taskarr.length; i++) {
+    for (let i = taskarr.length-1; i>= 0; i--) {
         //div
         const task = document.createElement('div')
         task.addEventListener('mouseenter',()=>{
